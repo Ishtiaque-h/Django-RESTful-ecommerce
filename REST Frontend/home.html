@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	<meta name="description" content="Shawdai is a Chittagong based e-commerce website focused in delivering grocery and other essential goods door-to-door via an easy-to-use platform"/>
+	<meta name="keywords" content="Google, Facebook, Youtube, Linkedin, E-Commerce, Shawdai, Amazon, Alibaba, AliExpress, eBay, evaly, Baidu, Wikipedia, Zoom, Shopify"/>
+	<meta name="author" content="Manchitro"/>
+	<meta name="robots" content="index,follow"/>
+	<link rel="icon" type="image/png" href="./static/img/logo.png"/>
+	<meta property="og:image" content="./static/img/logo.png" />
+	<title> Home | Shawdai</title>	
+  
+		<link rel="stylesheet" href="./static/css/datatable.css"/>
+		<link rel="stylesheet" href="./static/css/responsive.bootstrap.css"/>
+		<link rel="stylesheet" href="./static/css/confirm.css"/>
+		<link rel="stylesheet" href="./static/css/styles/single.css"/>
+		<link rel="stylesheet" href="./static/css/aos.css"/>
+		<link rel="stylesheet" href="./static/css/open_sans_roboto.css"/>
+		<link rel="stylesheet" href="./static/css/materialdesignicons.min.css"/>
+		<link rel="stylesheet" href="./static/css/font-awesome.min.css"/>
+		<style>
+			body{
+				overflow-x:hidden;
+			}
+			
+			@font-face{
+				src:url(./static/fonts/siyam.ttf);
+				font-family:siyam;
+				unicode-range: U+980-9FF;
+			}
+			
+			
+			*{
+				font-family:siyam, 'Open Sans', sans-serif;
+			}
+			
+			::-webkit-scrollbar{
+				width:5px;
+			}
+						
+			::-webkit-scrollbar-track{
+				background:#f1f1f1;
+			}
+						
+			::-webkit-scrollbar-thumb{
+				background:linear-gradient(to top, #92bf47, #1b9b98, #343a40) !important;
+				border-radius:2px;
+			}
+			
+			/* pagination css */
+				
+				.pagination{
+					display:inline-block;
+				}
+				
+				ul.pagination li{
+					display:inline;
+				}
+				
+				ul.pagination li{
+					display:inline-block;
+				}
+				
+				.pagination>li:first-child>a, .pagination>li:first-child>span,
+					.pagination>li:last-child>a, .pagination>li:last-child>span,
+						.pagination>li>a, .pagination>li>span{
+							border-radius:3px !important;
+				}
+				
+				ul.pagination li a, ul.pagination li a:focus {
+					font-size:1.2em;
+					margin:4px;
+					padding:6px 16px;
+					border-radius:4px;
+					background: white;
+					border: none !important;					
+					transition: all .6s;
+				}
+				
+				.page-item.active .page-link {
+					padding:7px 17px;
+					margin-top:3px;
+					background:linear-gradient(to right,#1d9a97,#24ca5f) !important;
+				}
+				ul.pagination li a, ul.pagination li a:focus{
+					color:#0b5453;
+					box-shadow:0px 1px 2px 0px rgba(14,143,140,0.6) !important;
+				}
+				ul.pagination li a{
+					transition:all 0.4s;
+				}
+				ul.pagination li a:hover {
+					background:rgba(13,134,131,0.05);
+				}
+				
+			/* end of pagination css */
+			
+			.osahan-carousel-two.border-top.py-4 .container{
+				width:100% !important;
+			}
+			
+			.navbar-top{
+				background:linear-gradient(135deg,#20c7a1 1%,#343a40 100%) !important;
+			}
+						
+			.category_menu, #search_button, .btn-secondary,
+			.sidebar-category-item a:hover p, .btn-secondary, .cart-btn .cart-value{
+				background:linear-gradient(to right,#1b9b98,#92bf47) !important;
+			}
+			
+			.footer{
+				background:white !important;
+			}
+			
+			.product-body{
+				height:85px;
+			}
+			
+			.product-body h5{
+				color: #08544f;
+				font-size: 1.16em;
+				font-weight: 100;				
+				line-height: 1.5;
+				font-family: 'Open Sans', sans-serif;
+				vertical-align:middle;
+				position:relative;
+			}
+			
+			.product_badge{
+				color:#43a599;
+				font-size:14px;
+				background:white;
+				text-align:center;
+				margin:0px;
+				padding:0px;
+				border:none;
+				display:block;
+				width:100%;
+				position:absolute;
+				top:8px;
+				left:0px;
+				z-index:9;
+			}
+			
+			.offer-price, .price-unit{
+				margin:0px;
+				padding:0px;
+			}
+			
+			.offer-price{
+				font-size:1.28em;
+				margin-top:14px;
+				font-weight:700;
+			}
+			
+			.price-unit{
+				color:#637773;
+				color:#337d6f;
+				font-size:1.08em;
+				margin-top:2px;
+			}
+			
+			.category-list-sidebar-header, .product-footer .btn, .view_all_button{
+				box-shadow: 0px 1px 4px 0px rgb(111, 230, 181);
+				border-bottom:solid 1px #042f2f;
+			}
+			
+			.view_all_button {
+				font-size: 1.02em;
+				padding: 5px 24px;
+				background: white;
+				border-bottom: solid 1px #16967e;
+				border-radius: 40px !important;
+			}
+			
+			.gap-before{
+				margin-top:24px;
+			}
+			
+			.product{
+				border:solid 1px rgb(255,255,255);
+				box-shadow:0 1px 2px 0 #4ca98a;
+				transition:all 0.3s;
+			}
+			
+			#parent_categories, .shadow-container{
+				box-shadow:0px 1px 2px 0px #3fa986;
+			}
+			
+			.category-list-sidebar-body h6{
+				font-size:1.08em;
+			}
+			
+			.sidebar-category-item img{
+				width:26px;
+				height:26px;
+			}
+			
+			.category-list-sidebar-body .item:nth-child(1){
+				margin-top:6px;
+			}
+			
+			.last_footer{
+				box-shadow:0px -1px 2px 0px rgba(20,156,139,0.6) !important;
+			}
+			
+			.last_footer .footer_link{
+				color:#02332a;
+				font-size:1.18em;
+				margin:0px;
+				margin-bottom:10px;
+				padding:0px;
+			}
+			
+			.footer_link a{
+				cursor:pointer;
+			}
+			
+			.footer_link .fa{
+				font-size:1.6em;
+				color:#2dbb80 !important
+			}
+			
+			.extra_space{
+				height:8px;
+				margin:0px;
+				padding:0px;
+			}
+			
+			.heading-design-h5{
+				color:#216152;
+				font-size:22px;
+			}
+			
+			.cart-btn .mdi {
+				color: #065d5d;
+				box-shadow: 0 0 3px 0px #065d39;
+			}
+		
+			.other_top_menu{
+				margin-right: 11px;
+				padding-right: 22px !important;
+			}
+						
+			.top-products-holder{
+				margin:0px;
+				padding:0px;
+			}
+			
+			.feature_holder{
+				background: #fff;
+				border-radius: 2px;
+				margin-top:16px;
+				padding:20px 14px;
+				box-shadow:0px 1px 2px 0px #3fa986;				
+			}
+			
+			.feature_parent{
+				color:black;
+				margin:0px;
+				padding:0px;
+				padding-top:14px;
+				border-top:solid 1px #c7e0d9;
+				text-align:center;
+			}
+			
+			.first_feature{
+				border:none;
+				padding:0px;
+			}
+			
+			.icon_holder{
+				font-size:2.1em;
+				transition:all 0.35s;
+			}
+			
+			.first_icon, .second_icon, .third_icon{
+				color:#2dbb80;
+			}
+			
+			.feature_parent p{
+				color:black;
+				font-size:1.16em;
+				margin-top:6px;
+				transition:all 0.3s;
+			}
+			
+			.feature_parent:hover .icon_holder{
+				transform:rotateY(180deg);
+			}
+			
+			.feature_parent:hover p{
+				transform:scale(1.06);
+			}
+			
+			.text-secondary{
+				color:#022b28 !important;
+			}
+			
+			.own_features .fa{
+				color:#2dbb80 !important;
+				font-size:42px;
+			}
+			
+			.own_feature_parent{
+				text-align:center;
+				padding:22px 0px 0px 4px;
+				border-top:solid 1px #c7e0d9;
+			}
+			
+			.first_own_feature_parent{
+				border:none;
+				padding:10px 0px 0px 4px;
+			}
+			
+			h5{
+				font-size:1.34em;
+			}
+			
+			.is_on_mobile{
+				margin-top:-20px;
+				display:none;
+			}
+			
+			#page_title_holder{
+				display:none;
+			}
+			
+			.main_content_holder{
+				margin:0px;
+				padding:0px;
+			}
+			
+			.active_category{
+				border-left: 2px solid #28d696;
+				background-color: #eff7fa;
+			}
+			
+			.active_count{
+				color:white;
+				background:linear-gradient(to right,#1b9b98,#92bf47) !important;
+			}
+			
+			.no-product-parent, .common_content_parent{
+				color: #056d63;
+				font-size: 1.3em;
+				background: white;
+				padding: 14px 20px;
+				border-radius: 3px;
+				text-align:center;
+				box-shadow: 0px 1px 2px rgb(64, 187, 159);
+			}
+			
+			.common_content_parent .feature_holder{
+				box-shadow:none;
+			}
+			
+			.common_content_parent .own_features .fa{
+				font-size:48px;
+			}
+			
+			.common_content_parent{
+				font-size:1.08em;
+			}
+			
+			.no_product_image{
+				width:50%;
+			}
+			
+			.own_top_menu{
+				font-size:1.2em;
+			}
+			
+			.own_top_menu .fa{
+				color:#11ad7b;
+				font-size:1.3em;
+			}
+			
+			.dropdown-divider{
+				margin:0px;
+			}
+			
+			.top_title_parent{
+				margin-top:-10px;
+				margin-bottom:12px;
+				padding:8px 8px 8px 20px;
+				border-radius:28px 0px 0px 28px;
+				border-left:solid 1px #4ca98a;
+				background:linear-gradient(to right, rgb(255,255,255), rgb(255,255,255) , rgba(255,255,255,0));
+			}
+			
+			.top_title_parent .heading-design-h5{
+				font-size:1.45em;
+				margin:0px;
+				padding:0px;
+			}
+			
+			.contact_page .feature_parent{
+				margin-top:-8px;
+			}
+			
+			.contact_page .fa{
+				font-size:38px;
+			}
+			
+			.faq_page{
+				text-align:left;
+			}
+			
+			.faq_page h5{
+				color:#066d5f;
+				font-size:1.5em;
+				margin-top:12px;
+			}
+			
+			.faq_page p{
+				color:black;
+				font-size:1.08em;
+				text-align:justify;
+			}
+			
+			.top_page_title{
+				word-wrap:break-word;
+			}
+			
+			.top_page_title img{
+				width:100px;
+			}
+			
+			.search_button{
+				cursor:default;
+			}
+			
+			
+			#single_product_bangla_name{
+				font-size:1.3em;
+			}
+			
+			.shop-detail-right .offer-price .text-success{
+				font-size:20px;
+			}
+			
+			.text-success{
+				color:#35b573 !important;
+			}
+			
+			.shop_holder{
+				background:white;
+				border-radius:3px;
+				padding:20px;
+				box-shadow:0px 1px 2px 0px #3fa986;
+			}
+			
+			.shop-detail-right{
+				border:none;
+			}
+			
+			.short-description h5{
+				font-size:1.6em;
+			}
+			
+			.cart_button_holder{
+				margin-top:30px;
+			}
+			
+			.shop-detail-right .btn{
+				margin:14px 0px 29px 0px;
+			}
+			
+			.shop-detail-slider #sync2 .synced img, .shop-detail-slider #sync2 img:hover{
+				border:solid 1px #1b9b98;
+			}
+						
+			.cart_button_holder table tr td{
+				padding:0px;
+			}
+			
+			.cart_button, .cart_button:hover, .cart_button:focus{
+				background:white;
+				font-size:1.7em;
+				margin:6px;
+				padding:4px 16px;
+				border-radius:3px;
+				box-shadow:0px 1px 2px 0px #1e7558;
+				border:none;
+				outline:none;
+			}
+			
+			.cart_quantity{
+				max-width:120px;
+				font-size:1.2em;
+				text-align:center;
+				font-weight:bold;
+				border:solid 1px rgb(210,210,210);
+				padding:4px 6px;
+				outline:none;
+			}
+			
+			.product_desciption{
+				color:rgb(120,120,120);
+				font-size:1.15em;
+				text-align:justify;
+				margin-top:16px;
+			}
+			
+			.shop-detail-right, .shop-detail-left{
+				padding:20px;
+			}
+			
+			.product_type_name{
+				color:#0a7d63;
+				font-size:1.2em;
+				margin-top:14px;
+			}
+						
+			@keyframes show_message{
+				/*0%{
+					bottom:-300px;
+					transform:scale(0.3);
+				}
+				10%{
+					bottom:-30px;
+					transform:scale(0.3);
+				}	
+				15%{
+					bottom:20px;
+					transform:scale(1);
+				}
+				85%{
+					bottom:20px;
+					transform:scale(1);
+				}
+				90%{
+					bottom:-30px;
+					transform:scale(0.3);
+				}	
+				100%{
+					bottom:-300px;
+					transform:scale(0.3);
+				}*/
+				0%{
+					transform:rotateX(90deg);
+				}
+				15%{
+					transform:rotateX(0deg);
+				}
+				85%{
+					transform:rotateX(0deg);
+				}
+				100%{
+					transform:rotateX(90deg);
+				}
+			}
+						
+			.message_line{
+				width:105%;
+				height:4px;
+				margin:0px;
+				padding:0px;
+				background:linear-gradient(to right,#157b79,#8ad213) !important;
+				position:absolute;
+				top:0;
+				left:-2%;
+			}
+			
+			.second-cart-value{
+				color:#54ec83;
+				font-size:0.9em;
+			}
+			.cart_loader{
+				color:black;
+				font-size:1.3em;
+			}
+			
+			.cart_loader_image{
+				width:80px;
+			}
+			
+			.cart-list-product h5{
+				font-size:16px;
+				color:#1caba0;
+			}
+			
+			.cart-list-product h6{
+				font-size:16px;
+			}
+			
+			.per_price{
+				font-weight:bold;
+			}
+			
+			.form_holder{
+				border-radius:3px;
+				position:relative;
+				overflow:hidden;
+			}
+			
+			.bottom_line{
+				width:0%;
+				height:2px;
+				background:linear-gradient(to right,#1b9b98,#92bf47);
+				margin:0px;
+				padding:0px;
+				position:absolute;
+				right:0px;
+				bottom:0px;
+				transition:all 0.3s;
+			}
+			
+			.form-control:focus + .bottom_line{
+				width:100%;
+				left:0px;
+			}
+			
+			.account_parent{
+				text-align:left;
+			}
+			
+			.account_parent .form-label{
+				font-size:1.26em;
+				margin-bottom:10px;
+			}
+			
+			.login_button, .signup_button, .signup_otp_button, .resend_otp_button,
+				.verify_button, .submit_forgot_password_otp_button, .request_forgot_otp_button,
+				.update_password_button, .update_account_button, .skip_account_button, .proceed_to_checkout_button,
+					.all_products_from_search, .proceed_button_on_minimum, .join_button, .join_otp_button, .details_on_checkout_button{
+						font-size:1.06em;
+						padding:6px 24px;
+						border-radius:24px !important;
+						box-shadow: 0 1px 4px 0 #6fe6b5;
+						border-bottom: solid 1px #042f2f;
+			}
+			
+			.proceed_to_checkout_button, .browse_products_button, .place_order_button, .view_own_orders_button,
+				.add_to_cart_button, .close_button, .button_404{
+				font-size:1.06em;
+				border-radius:24px !important;
+				box-shadow: 0px 1px 4px 0px rgb(111, 230, 181) !important;
+				border-bottom:solid 1px #042f2f !important;
+			}
+			
+			.shop_holder{
+				padding:0px;
+			}
+			
+			#single_product_name{
+				font-size:1.6em;
+			}
+			
+			.shop-detail-right .btn{
+				padding:10px 20px;
+			}
+			
+			#productViewModal .modal-body{
+				padding:10px;
+			}
+			
+			#productViewModal .img-fluid{
+				width:80%;
+				margin-left:10%;
+			}
+			
+			.place_order_button{
+				font-size:1.14em;
+			}
+			
+			.form_parent{
+				border-radius:3px;
+				border:solid 1px #b3d0c4;
+				padding:16px;
+			}
+			
+			.registration-div{
+				color:#37614e;
+				margin-top:4px;
+			}
+			
+			.registration-div a{
+				color:#14ad43;
+			}
+			
+			.select2-container--default .select2-selection--single {
+				border: 1px solid #c6cacc;
+			}
+			
+			.select2-results__option{
+				color:black;
+			}
+			
+			.second_form_parent, .resend_otp_button{
+				display:none;
+			}
+			
+			.resend_div{
+				margin:0px;
+				padding:0px;
+			}
+			
+			.account_section, .common_parent{
+				padding:12px 6px;
+				background:rgb(255,255,255);
+				box-shadow:0px 1px 2px 0px #3fa986;
+			}
+			
+			.common_parent{
+				border-radius:2px;
+			}
+			
+			.list-group-item{
+				font-size:1.15em;
+			}
+			
+			.list-group-item.active{
+				background:linear-gradient(to right,#1b9b98,#92bf47) !important;
+			}
+			
+			.forgot_otp_parent_div{
+				margin:0px;
+				padding:0px;
+				display:none;
+			}
+			
+			.show_on_mobile{
+				display:none;
+			}
+			
+			.account_section .form-label{
+				color:#2b8470;
+				font-size:1.4em;
+				margin-bottom:4px;
+			}
+			
+			.account_info_div h5{
+				line-height:1.6;
+			}
+			
+			.account_update_div{
+				display:none;
+			}
+			
+			.cost_description{
+				font-size:1.04em;
+			}
+			
+			.cost_description strong{
+				color:black !important;
+			}
+			
+			.cart_parent .cart-list-product h5{
+				font-size:18px;
+			}
+			
+			.cart_parent .per_price{
+				font-size:16px;
+			}
+			
+			.cart_parent .unit_name{
+				color:black;
+				font-size:14px;
+			}
+			
+			.cart_quantity_view, .cart_quantity_view:focus{
+				max-width: 120px;
+				font-size: 1.04em;
+				text-align: center;
+				border: solid 1px #d2d2d2;
+				font-weight:bold;
+				margin-top:2px;
+				padding: 4px 6px;
+				border-radius:3px;
+				outline:none;
+				box-shadow:none;
+			}
+			
+			.common_parent .cost_description, .common_parent .cost_description h6{
+				font-size:16px;
+			}
+			
+			.common_parent .cost_description h6{
+				margin-top:4px;
+			}
+			
+			#grocery_redirect_url{
+				display:none;
+			}
+			
+			.checkout_parent .cart-list-product h5{
+				font-size:16px;
+				line-height:1.45;
+			}
+			
+			.order_parent h5{
+				text-align:center;
+			}
+			
+			.order_parent h5 strong{
+				font-size:1.2em;
+				margin-top:10px;
+				display:block;
+			}
+			
+			.order_option_title{
+				color:black;
+				font-size:1.3em;
+				font-weight:bold;
+				margin-left:8px;
+				display:inline-block;
+				cursor:pointer;
+			}
+			
+			.current_address_description{
+				color:rgb(60,60,60);
+				font-size:1.2em;
+				margin-top:4px;
+			}
+			
+			.new_address_parent{
+				margin-top:10px;
+			}
+			
+			.order_parent{
+				border-top:solid 1px #c6cecd;
+			}
+			
+			.new_address_description{
+				padding:6px;
+				display:none;
+			}
+			
+			.new_address_parent .form-label{
+				color:black;
+				font-size:1.2em;
+			}
+			
+			.place_order_parent h5{
+				font-size:1.45em;
+			}
+			
+			.place_order_parent h4{
+				font-weight:bold;
+				color:#047974;
+			}
+			
+			.place_order_parent .sub_text{
+				color:rgb(100,100,100);
+			}
+			
+			.place_order_parent h6 span{
+				color:black;
+				font-weight:bold;
+			}
+			
+			.place_order_parent .total_text{
+				font-size:1.4em;
+				font-weight:bold;
+				margin-top:14px;
+			}
+			
+			.order_table thead{
+				background:linear-gradient(to right,#1b9b98,#92bf47);
+			}
+			
+			.order_table thead th{
+				color:white;
+				font-size:1.06em;
+			}
+			
+			.order_table tbody tr{
+				font-size:1.06em;
+			}
+			
+			.order_link{
+				color:#125a5a;
+				font-weight:bold;
+			}
+			
+			.order-details-holder{
+				border-radius:3px;
+				margin-top:20px;
+				padding:6px;
+				box-shadow:0px 1px 3px 0px #91b3ae;
+			}
+			
+			.order_text{
+				color:black !important;
+				font-size:1.24em !important;
+				font-weight:100;
+				line-height:1.45;
+			}
+			
+			.order_text strong{
+				font-weight:bold !important;
+			}
+			
+			.order-address-holder h4{
+				font-size:1.5em !important;
+				margin-bottom:12px;
+			}
+			
+			.close_button{
+				padding:8px 20px;
+			}
+			
+			.product_unit{
+				color:black;
+				font-size:1.24em;
+				margin-top:8px;
+			}
+			
+			.cart_parent .cart-list-product{
+				border-radius:3px;
+				box-shadow:0px 1px 2px 0px #99b7b5;
+				border-top:solid 1px rgb(224,232,232);
+				position:relative;
+			}
+			
+			.remove_cart_button{
+				color:#d6580e;
+				font-size:16px;
+				position:absolute;
+				top:4px;
+				right:10px;
+				cursor:pointer;
+			}
+			
+			.cart_list_{
+				margin-top:8px;
+			}
+			
+			.jconfirm.jconfirm-material .jconfirm-box div.jconfirm-title-c, .jconfirm-title{
+				color:rgb(9,111,93) !important;
+				margin-top:8px;
+			}
+			
+			.jconfirm-content{
+				color:black !important;
+				font-size:1.2em;
+			}
+			
+			.btn-danger, .btn-danger.focus, .btn-danger:focus,
+			.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons .btn-danger, .btn-danger.focus, .btn-danger:focus{
+				color: #fff;
+				background-color: #c82333;
+				border-radius:3px !important;
+				border-color: #bd2130;
+				box-shadow:0px 1px 2px 0px #5f8c7b;
+			}
+			
+			.jconfirm.jconfirm-supervan .jconfirm-box .jconfirm-buttons .btn-no{
+				color:black;
+				background:white;
+				margin-left:16px;
+				border:solid 1px #dde0e0;
+				box-shadow:0px 1px 2px 0px #5f8c7b;
+			}
+			
+			.jconfirm.jconfirm-supervan .jconfirm-bg {
+				background: linear-gradient(to right,rgba(27, 155, 152, 0.6),rgba(146, 191, 71, 0.6));
+			}
+			
+			.jconfirm.jconfirm-supervan .jconfirm-box{
+				background:white;
+				box-shadow:0px 2px 4px 0px #095a4b;
+			}
+			
+			.order_status_text{
+				font-size:1.25em !important;
+			}
+			
+			.order_text{
+				color:black;
+				margin-top:12px !important;
+			}
+			
+			.order-parent h5{
+				color:black;
+				font-size:1.3em !important;
+			}
+			
+			.order-address-holder{
+				margin-top:14px;
+			}
+			
+			table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting:after{
+				content: "";
+			}
+			
+			#DataTables_Table_0_wrapper .row{
+				width:100% !important;
+			}
+			
+			.all_products_from_search{
+				font-size:0.85em;
+				margin-top:20px;
+				border:none;
+			}
+			
+			#the_search_text{
+				display:none;
+			}
+			
+			.product_loader_parent{				
+				color:black;
+				font-size:20px;
+				text-align:center;
+				padding:16px;
+			}
+			
+			.product_loader_parent img{
+				width:80px;
+			}
+			
+			.product_table{
+				width:100%;
+			}
+						
+			.product_table tbody tr td:nth-child(1){
+				width:20%;
+				text-align:left;
+			}
+			
+			.product_table tbody tr td:nth-child(2){
+				text-align:right;
+			}
+			
+			.new_cart_button{
+				color:#119c8d;
+				font-size:16px;
+				cursor:pointer;
+			}
+			
+			.view_details_button .fa{
+				color:#73b510;
+				font-size:16px;
+				margin-top:4px;
+			}
+			
+			.the_button, .the_button:hover, .the_button:focus{
+				background:none;
+				border:none;
+				border-top:solid 1px #d2f9e5;
+				box-shadow:0px 1px 2px 0px #4aa977;
+				border-top: solid 1px #dee2e2;
+				border-bottom: solid 1px #224646;
+				border-radius:24px;
+				margin-top:12px;
+				padding:4px 20px;
+			}
+			
+			a:focus, button:focus{
+				outline:none !important;
+			}
+			
+			.new_cart_button{
+				margin-left:-10px;
+			}
+			
+			.inside_details_button{
+				margin-right:-10px;
+			}
+			
+			@keyframes animateMinimum{
+				0%{
+					opacity:1;
+				}
+				50%{
+					opacity:0.5;
+				}
+				100%{
+					opacity:1;
+				}
+			}
+			
+			.minimum_order_text{
+				color:#22965f;
+				font-weight:bold;
+				animation:animateMinimum 1.2s infinite;
+			}
+			
+			.proceed_button_on_minimum{
+				border:none;
+				outline:none;
+				border-bottom: solid 1px #224646;
+				opacity:0.4;
+			}
+			
+			.about_page, .contact_page, .faq_page, .cart_parent{
+				font-size: 1.1em;
+				border:solid 1px white !important;
+				background: white;
+				padding: 14px 20px;
+				text-align:center;
+			}
+			
+			.form_parent, .card.account-left, .card.account-right{
+				border-radius:8px;
+			}
+			
+			.account_parent, .main_order_parent, .account_section, .shop_holder, .no-product-parent,
+				.home_product_type{
+					border:solid 1px white !important;
+			}
+			
+			.product, .top_title_parent, #parent_categories, .feature_holder, .about_page, .contact_page,
+				.faq_page, .cart_parent, .account_parent, .main_order_parent, .account_section, .shop_holder, .no-product-parent,
+					.home_product_type{
+						border-bottom:solid 1px #6ea3af;
+						border-radius:14px;
+						box-shadow:0px 6px 12px 0px #c9d8d3;
+						transition:all 0.4s;
+			}
+			
+			.category-list-sidebar{
+				border-radius:0px 0px 14px 14px;
+			}
+			
+			.home_product_type{
+				background:white;
+				padding:14px 20px !important;
+				border-bottom:solid 1px #6ea3af !important;
+				overflow:hidden;
+			}
+			
+			.home_product_type .col-lg-2{
+				margin:0 auto;
+			}
+			
+			.home_product_type .img-fluid{
+				width:60px;
+				height:60px;
+				margin-top:5px;
+			}
+			
+			.home_product_type h6{
+				color:#052f25;
+				font-size:1.04em;
+				line-height:1.4;
+				margin-top:10px;				
+			}
+			
+			.product_type_at_home a{
+				padding:8px 8px 4px 8px;
+				box-shadow:0px 1px 4px 0px #ffffff;
+				margin-top:12px !important;
+				transition:all 0.4s;
+				display:block;
+			}
+			
+			.product_type_at_home:hover a{
+				border-radius:8px;
+				transform:scale(1.04);
+				box-shadow:0px 1px 4px 0px #aecac0;
+			}
+			
+			
+			.product:hover, .about_page:hover, .contact_page:hover, .faq_page:hover, .cart_parent:hover,
+				.account_parent:hover, .main_order_parent:hover, .account_section:hover, .shop_holder:hover,
+					.no-product-parent:hover, .home_product_type:hover{
+						border:solid 1px #edf9f5 !important;
+						box-shadow: 0 2px 4px 0 #afccc2 !important;
+			}
+			
+			.modal-body .shop_holder{
+				border-radius:4px;
+				box-shadow: 0 2px 4px 0 #afccc2 !important;
+			}
+			
+			.faq_page *{
+				text-align:left;
+			}
+			
+			.about_page .text-secondary{
+				font-size:1.1em;
+			}
+									
+			.main_order_parent .cart_parent{
+				border-radius:10px;
+			}
+			
+			.cart_parent .cart-list-product{
+				border-radius:8px;
+			}
+			
+			ul.pagination li a, ul.pagination li a:focus, ul.pagination li .active_page, ul.pagination li active_page:focus{				
+				box-shadow:0px 3px 8px 0px #aecac0 !important;
+				border:solid 1px #dbe2de !important;
+				transition:all 0.4s;
+			}
+			
+			.pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span, .pagination>li>a, .pagination>li>span{
+				border-radius:8px !important;				
+			}
+			
+			ul.pagination li:hover a{
+				background:white !important;
+			}
+			
+			ul.pagination li:hover a, ul.pagination li:hover .active_page{				
+				box-shadow: 0 2px 4px 0 #afccc2 !important;
+			}
+			
+			.main_order_parent{
+				padding:8px 12px;
+				margin-bottom:20px;
+			}
+			
+			.main_order_parent .cart_parent{
+				text-align:left;
+				box-shadow:0px 1px 2px 0px #3fa986;
+			}
+			
+			.main_order_details_parent, .main_order_details_parent .cart_parent{
+				font-size:0.9em !important;
+				text-align:left !important;
+			}
+			
+			.cart_parent .cart-list-product{
+				text-align:left;
+			}
+						
+			.order-parent{
+				font-size:0.9em;
+				text-align:left !important;
+			}
+			
+			.cost_description{
+				text-align:left !important;
+			}
+			
+			#parent_categories{
+				border-radius:0px 0px 18px 18px;
+				overflow:hidden;
+			}
+			
+			.shadow-container{
+				box-shadow:0px 3px 8px 0px #c7e0d8;
+			}
+			
+			.top_title_parent{
+				box-shadow:0px 4px 10px 0px #c9e4da;
+			}
+			
+			#parent_categories:hover, .feature_holder:hover{
+				box-shadow: 0 2px 4px 0 #afccc2;
+			}
+			
+			.product{
+				overflow:hidden;
+			}
+			
+			.product-header{
+				padding-top:30px;
+			}
+			
+			.product-header .img-fluid{
+				height:150px;
+			}
+			
+			.product-header .badge{
+				width:100%;
+				color:#0c6556;
+				font-size:14px;
+				background:white;
+				top:8px;
+				left:0px;
+			}
+			
+			.product-header .badge a{
+				color:#0c6556;
+			}
+			
+			.mobile_bottom{
+				width:100%;
+				background:white;
+				box-shadow:0px -1px 2px 0px #c0d6cd;
+				position:fixed;
+				right:0px;
+				left:0px;
+				bottom:0px;
+				display:none;
+			}
+			
+			.mobile_bottom table{
+				width:100%;
+			}
+			
+			.mobile_bottom table tbody tr td{
+				color:#57ad6e;
+				font-size:1.5em;
+				text-align:center;
+				padding:4px;
+			}
+			
+			.mobile_bottom table tbody tr td .mdi-home{
+				font-size:1.24em;
+				margin-top:2px;
+			}
+			
+			.mobile_bottom table tbody tr td .mdi-keyboard-backspace{
+				font-size:1.1em;
+				margin-top:2px;
+				display:inline-block;
+			}
+			
+			.mobile_bottom table tbody tr td a{
+				color:#57ad6e;
+				display:block;
+			}
+			
+			.mobile_bottom table tbody tr td:nth-child(1),
+			.mobile_bottom table tbody tr td:nth-child(2){
+				width:33.33%;
+			}
+			
+			.bottom-cart-value{
+				font-size:0.9em;
+			}
+			
+			.fa-truck{
+				transform:rotateY(180deg);
+			}
+			
+			.button_404{
+				font-size:0.75em;
+				margin-top:18px;
+				padding:8px 20px;
+			}
+			
+			@keyframes animateMessage{
+				0%{
+					top:-300px;
+					transform:scale(0.1);
+				}
+				7%{
+					top:0px;
+					transform:scale(0.7);
+				}
+				10%{
+					top:10px;
+					transform:scale(1);
+				}
+				90%{
+					top:10px;
+					transform:scale(1);
+				}
+				93%{
+					top:0px;
+					transform:scale(0.7);
+				}
+				100%{
+					top:-300px;
+					transform:scale(0.1);
+				}
+			}
+			
+			
+			.message_div{
+				width:30%;
+				color:black;
+				font-size:1.18em;
+				padding:12px;
+				border-radius:4px;
+				background:white;
+				border:solid 1px #daeae6;
+				box-shadow:0px 6px 16px 0px #85ab9e;
+				position:fixed;
+				left:35%;
+				top:-300px;
+				transform:scale(0.1);
+				z-index:2147483647;
+				overflow:hidden;
+				transition:all 0.4s;
+			}
+			
+			.message_div:hover{
+				box-shadow:0px 2px 6px 0px #85ab9e;
+			}
+			
+			input[readonly]{
+				background:white !important;
+			}
+
+			.checkout_row{
+				display:flex;
+				flex-direction:row-reverse;
+			}
+
+			.the_checkout_parent .proceed_to_checkout_button, .update_password_div{
+				display:none;
+			}
+			
+			.details_on_checkout_button{
+				font-size:0.65em;
+				display:none;
+			}
+			
+			.top_home_menu{
+				border-radius:0px 0px 14px 14px;
+			}
+			
+			.to_update_account_button{
+				color:#42a77d;
+				font-size:1.5em;
+				cursor:pointer;
+			}
+			
+			.update_password_button{
+				font-size:1.05em;
+			}
+			
+			.profile_update_title{
+				color:#106d5f;
+				font-size:1.6em;
+				margin-bottom:22px;
+			}
+			
+			#map_canvas{
+				width:100%;
+				height:50vh;
+			}
+			
+			#profile_lat, #profile_long,
+				#order_lat, #order_long{
+					display:none;
+			}
+			
+			.c_quantity{
+				color:rgb(6,142,115);
+				font-size:1.15em;
+			}
+			
+			/*
+				screen
+			*/
+			
+			@media only screen and (max-width: 991px){
+				.checkout_parent{
+					margin-bottom:10px;
+				}
+				.checkout_cart_details{
+					margin-bottom:10px;
+				}
+				.details_on_checkout_button{
+					display:inline-block;
+				}
+				.cart_details_on_checkout{
+					display:none;
+				}
+				.mobile_bottom{
+					display:block;
+				}
+				.top_my_cart{
+					display:none;
+				}
+				.main-nav-right{
+					margin-top:20px;
+				}
+				.product_type_at_home{
+					width:33%;
+				}
+				.product_type_at_home a{
+					padding:4px;
+				}
+				.home_product_type .img-fluid{
+					width:50px;
+					height:50px;
+				}
+				.home_product_type h6{
+					font-size:1em;
+					line-height:1.3;
+				}
+				.cart_parent .cart-list-product .cart_price_viewer{
+					text-align:center;
+				}
+				.osahan-menu{
+					box-shadow:0px 2px 8px 0px #aecac0;
+				}
+				.side_cart_details{
+					margin-top:10px;
+				}
+				.shop-detail-slider #sync2 img{
+					margin:8px;
+				}
+				#productViewModal .modal-title{
+					font-size:1.6em;
+				}
+				#productViewModal .img-fluid{
+					width:50%;
+					margin-left:25%;
+				}
+				
+				/*#productViewModal*/
+				
+				#productViewModal .shop-detail-right h2{
+					margin:6px 0px;
+				}
+				
+				#productViewModal #single_product_bangla_name{
+					font-size:1.2em;
+				}
+				
+				#productViewModal #single_product_name {
+					font-size:1.4em;
+				}
+				
+				#productViewModal .shop-detail-right, #productViewModal  .shop-detail-left{
+					padding:0px 10px;
+				}
+				
+				#productViewModal .shop-detail-slider #sync2 img{
+					width:45px;
+				}
+				.remove_cart_button{
+					position:relative;
+					top:-8px;
+					right:0px;
+					text-align:right;
+				}
+				.cart_list_{
+					margin-top:-20px;
+				}
+				.order-address-holder{
+					margin-bottom:14px;
+				}
+				.order-details-holder .order-parent{
+					text-align:center;
+				}
+				.order-details-holder .order-parent img{
+					width:50%;
+					height:auto;
+					margin-left:25%;
+					margin-bottom:10px;
+				}
+				.checkout_parent .cart-list-product img{
+					width:50%;
+					margin-left:25%;
+					margin-bottom:10px;
+				}
+				.checkout_description{
+					text-align:center;
+				}
+				.show_on_mobile{
+					display:block;
+				}
+				.common_content_parent.account_parent{
+					padding:6px;
+				}
+				.form_parent{
+					padding:12px;
+				}
+				.message_div{
+					width:90%;
+					left:5%;
+				}
+				.cart_button{
+					max-width:120px;
+				}
+				.cart_button, .cart_button:hover, .cart_button:focus{
+					padding:4px 12px;
+				}
+				.shop-detail-right{
+					margin-top:20px;
+					padding:16px;
+				}
+				.short-description{
+					padding:16px;
+				}
+				.shop-detail-right .offer-price .text-success{
+					font-size:20px;
+				}
+				.product-body h5{
+					font-size:1.26em;
+				}
+				.offer-price{
+					font-size:1.44em;
+				}
+				.price-unit{
+					font-size:1.18em;
+				}
+				.view_details_button{
+					font-size:1.06em !important;
+					margin-top:14px !important;
+				}
+				.about_page{
+					display:none;
+				}
+				.mdi-dots-vertical{
+					color:black;
+					font-size: 1.6em;
+					margin:0px 0px -20px 4px;
+					display: inline-block;
+				}
+				.mobile_menu::after{
+					display:none;
+				}
+				.no_product_image{
+					width:60%;
+					margin-top:-6px;
+				}
+				.osahan-menu .navbar-brand{
+					padding:20px 10px;
+				}
+				.own_features, .feature_holder{
+					display:none;
+				}				
+				.top_title_parent{
+					margin-top:0px;
+				}
+				.is_on_mobile{
+					display:block;
+				}
+				.not_on_mobile{
+					display:none;
+				}	
+				.feature_parent{
+					display:none;
+				}
+				.contact_page .feature_holder, .contact_page .feature_parent{
+					display:block;
+				}
+				.contact_page .feature_parent{
+					margin-top:20px;
+				}
+				.contact_page .first_contact{
+					margin-top:0px;
+				}
+				.top-categories-search{
+					width:96%;
+					margin-left:2%;
+					border-radius:3px;
+					overflow:hidden;
+					padding:0px !important;
+				}
+				.first_footer{
+					margin-top:28px !important;
+				}
+				.cart_parent .cart-list-product img{
+					height:60px;
+				}
+				.cart_parent .cart-list-product h5{
+					font-size:16px;
+				}
+				.cart_parent .per_price{
+					font-size:16px;
+				}
+				.cart_parent .offer-price{
+					font-size:1.2em;
+				}
+				.no_product_parent{
+					display:block;
+				}
+			}
+						
+			@media only screen and (min-width: 992px){
+				.modal-lg{
+					max-width:900px;
+				}
+				.mobile_menu{
+					display:none;
+				}
+				.top-products-holder .product-header img{
+					height:140px;
+				}
+				.container, .container-lg, .container-md, .container-sm {
+					max-width:100% !important;
+				}
+				.top-categories-search{
+					border-radius:30px;
+					border:solid 1px #aee6cf;
+					overflow:hidden;
+				}
+				.category-menu{
+					display:none;
+				}
+				.last_footer .row{
+					width:94%;
+					margin-left:3%;
+				}
+			}
+		</style>
+
+</head>
+<body>
+		<div class="message_div">
+			<p class="message_line"></p>
+			<div class="message_container"></div>
+		</div>
+	
+   <div class="navbar-top pt-2 pb-2">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 text-right" id="auth_navlink">
+				<a href="#" class="text-white"><i aria-hidden="true" class="mdi mdi-map-marker-circle"></i> Chittagong</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   <nav class="navbar navbar-light navbar-expand-lg bg-dark bg-faded osahan-menu">
+      <div class="container">
+        <a class="navbar-brand common_page_link" href="/">
+			<img src="./static/img/grocery_logo.png" alt="logo">
+		</a>
+         <button class="navbar-toggler navbar-toggler-white" type="button" data-toggle="collapse"
+            data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="navbar-collapse" id="navbarNavDropdown ">
+            <div class="navbar-nav mr-auto mt-5 mt-lg-2 margin-auto top-categories-search-main">
+               <div class="top-categories-search">
+                  <div class="input-group">
+                     <input type="text" id="search_box" class="form-control" autocomplete="off" value=""/>
+                     <span class="input-group-btn">
+                        <button class="btn btn-secondary" id="search_button" type="button">
+							<i class="mdi mdi-find"></i> Search
+						</button>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="my-2 my-lg-0">
+               <ul class="list-inline main-nav-right">
+					
+						<li class="list-inline-item dropdown osahan-top-dropdown">
+	
+						 </li>
+					
+					<li class="list-inline-item cart-btn top_my_cart">
+						<a href="#" data-toggle="offcanvas" class="btn btn-link border-none cart-viewer"><i class="mdi mdi-cart"></i>
+                        My Cart <small class="cart-value"></small></a>
+					</li>
+					<li class="list-inline-item top_mobile_menu">
+						<a href="" class="dropdown-toggle mobile_menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="mdi mdi-dots-vertical"></i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right dropdown-list-design">
+							<a class="dropdown-item common_page_link own_top_menu" href="/" title="Home">
+								<i class="fa fa-home"></i>
+								&nbsp;&nbsp;
+								<span>Home</span>
+							</a>
+							<div class="dropdown-divider own_top_menu"></div>
+							<a class="dropdown-item own_top_menu common_page_link" href="#">
+								<i class="fa fa-info-circle"></i>
+								&nbsp;&nbsp;
+								<span>About Us</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a  class="dropdown-item own_top_menu common_page_link" href="#">
+								<i class="fa fa-phone"></i>
+								&nbsp;&nbsp;
+								<span>Contact</span>
+							</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item own_top_menu common_page_link" href="#">
+								<i class="fa fa-question"></i>
+								&nbsp;&nbsp;
+								<span>FAQ</span>
+							</a>							
+                        </div>
+					</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </nav>
+   
+   <nav class="navbar navbar-expand-lg navbar-light osahan-menu-2 pad-none-mobile not_on_mobile">
+      <div class="container shadow-container">
+         <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link shop common_page_link" href="/rest/home.html" title="Home"><i class="fa fa-home"></i> Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link other_top_menu common_page_link" href="#">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link other_top_menu common_page_link" href="#">Contact</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link other_top_menu common_page_link" href="#">FAQ</a>
+				</li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   
+   
+   <section class="osahan-carousel-two border-top py-4">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="category-list-sidebar">
+                  <div class="category-list-sidebar-header">
+                     <button class="btn btn-link badge-success category_menu" type="button" data-toggle="collapse"
+                        data-target="#parent_categories" aria-expanded="false" aria-controls="collapseExample">
+                        All Categories <i class="mdi mdi-menu category-menu" aria-hidden="true"></i>
+                     </button>
+                  </div>
+                  <div class="collapse show" id="parent_categories">
+                     <div class="category-list-sidebar-body">
+							<div class="item">
+							   <div class="sidebar-category-item">
+								  <a href="#" title="New Products" class="category_link common_page_link">
+									 <img class="img-fluid" src="./static/img/new-products.jpg" alt="New Products">
+									 <h6>New Products</h6>
+								  </a>
+							   </div>
+							</div>
+							<div class="item">
+							   <div class="sidebar-category-item">
+								  <a href="#" title="Top Products" class="category_link common_page_link">
+									 <img class="img-fluid" src="./static/img/top-products.jpg" alt="Top Products">
+									 <h6>Top Products</h6>
+									 
+								  </a>
+							   </div>
+							</div>					 
+                     </div>
+                  </div>
+               </div>
+			   
+			   
+				<div class="feature_holder">
+					<div class="feature_parent first_feature">
+						<div class="icon_holder first_icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<p>Pahartali, Chittagong</p>
+					</div>
+					<p class="extra_space"></p>
+					<div class="feature_parent">
+						<div class="icon_holder second_icon">
+							<i class="fa fa-phone"></i>
+						</div>						
+						<p>+88 01864 027978</p>
+					</div>
+					<p class="extra_space"></p>
+					<div class="feature_parent">
+						<div class="icon_holder third_icon">
+							<i class="fa fa-envelope"></i>
+						</div>						
+						<p>ishtiaque.ndc@gmail.com</p>
+					</div>
+				</div>
+			   
+				<div class="feature_holder own_features">
+					<div class="row">
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent first_own_feature_parent">
+								<i class="fa fa-gift"></i>
+								<h5 class="mt-3 mb-3 text-secondary">Best Prices</h5>
+							</div>
+					   </div>
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent">
+								<i class="fa fa-truck"></i>
+								<h5 class="mt-3 mb-3 text-secondary">Next Day Delivery</h5>
+							</div>
+					   </div>
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent">
+								<i class="fa fa-check-square-o"></i>
+								<h5 class="mt-3 mb-3 text-secondary">100% Satisfaction Guarantee</h5>
+							</div>
+					   </div>
+					</div>
+				</div>
+			   
+            </div>
+            <div class="col-lg-9">
+				<div class="section-header top_title_parent">
+					<h5 class="heading-design-h5 top_page_title">
+						Home				
+					</h5>
+				</div>
+				<div class="main_content_holder">
+					
+				</div>
+            </div>
+         </div>
+      </div>
+   </section>
+   
+   <input type="hidden" id="the_csrf_token" value="{{csrf_token}}"/>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="feature_holder own_features is_on_mobile">
+					<div class="row">
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent first_own_feature_parent">
+								<i class="fa fa-gift"></i>
+								<h5 class="mt-3 mb-3 text-secondary">Best Prices</h5>
+							</div>
+					   </div>
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent">
+								<i class="fa fa-truck"></i>
+								<h5 class="mt-3 mb-3 text-secondary">Free & Next Day Delivery</h5>
+							</div>
+					   </div>
+					   <div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="own_feature_parent">
+								<i class="fa fa-check-square-o"></i>
+								<h5 class="mt-3 mb-3 text-secondary">100% Satisfaction Guarantee</h5>
+							</div>
+					   </div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	<br/><br/>
+   
+   <section class="footer section-padding py-5 last_footer">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 md-12 col-sm-12">
+               <div class="footer-brand">
+					<img class="img-fluid" src="./static/img/grocery_logo.png">
+					<br/><br/><br/>
+               </div>
+            </div>
+			<div class="col-lg-4 md-12 col-sm-12">
+				<div class="footer_link first_footer">
+					<i class="fa fa-map-marker"></i>
+					<br/>
+					Pahartali, Chittagong
+				</div>
+				<p class="extra_space"></p>
+				<div class="footer_link">
+					<i class="fa fa-phone"></i>
+					<br/>
+					+88 01864 027978
+				</div>
+				<p class="extra_space"></p>
+				<div class="footer_link">
+					<i class="fa fa-envelope"></i>
+					<br/>
+					grocery@gmail.com
+				</div>
+			</div>
+			<div class="col-lg-4 md-12 col-sm-12">
+				<div class="footer_link first_footer">
+					<a>
+						Home
+					</a>					
+				</div>
+				<div class="footer_link">
+					<a>
+						About Us
+					</a>					
+				</div>
+				<div class="footer_link">
+					<a>
+						Contact
+					</a>					
+				</div>
+				<div class="footer_link">
+					<a>
+						FAQ
+					</a>					
+				</div>
+			</div>
+			<div class="col-lg-4 md-12 col-sm-12">
+				
+			</div>
+         </div>
+      </div>
+   </section>
+   
+   <div class="cart-sidebar">
+		<div class="cart-sidebar-header">
+		 <h5>
+			My Cart
+			<span class="second-cart-value"></span>
+			<a data-toggle="offcanvas" class="float-right close-cart" href="#">
+				<i class="mdi mdi-close"></i>
+			</a>
+		 </h5>
+		</div>
+		<div class="cart-sidebar-body">
+			<div class="cart_loader">
+				Loading &nbsp;<img class="cart_loader_image" src="./static/loaders/main_loader.gif" />
+			</div>
+		</div>
+		<div class="cart-sidebar-footer">
+			<div class="cart_loader">
+				Loading &nbsp;<img class="cart_loader_image" src="./static/loaders/main_loader.gif" />
+			</div>
+		</div>
+   </div>
+   
+   <div id="productViewModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h4 style="color:rgb(46,82,122);font-weight:bold;" class="modal-title product_modal_title"></h4>
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					  <div class="product_description"></div>
+				  <br/>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn close_button btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+	</div>
+	
+	<div class="mobile_bottom">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<a href="/" class="common_page_link">
+							<i class="mdi mdi-home"></i>
+						</a>
+					</td>
+					<td>
+						<a href="#" class="common_page_link">
+							<i class="mdi mdi-cart"></i> (<span class="bottom-cart-value"></span>)
+						</a>						
+					</td>
+					<td>
+						<a href="#" class="bottom_back_button">
+							<i class="mdi mdi-keyboard-backspace"></i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+		<script src="./static/js/scripts/single.js"></script>
+		<script src="./static/js/datatable.js"></script>
+		<script src="./static/js/datatable-bootstrap.js"></script>
+		<script src="./static/js/datatable-responsive.js"></script>
+		<script src="./static/js/confirm.js"></script>		
+		<script src="./static/js/aos.js"></script>
+		<script src="./static/js/lazyload.js"></script>
+		<script>
+			
+			String.prototype.replaceAll = function (oldOne, newOne) {
+				return $.trim(this).split(oldOne).join(newOne);
+			};
+			
+			function appendResult(a_result){
+				//console.log(a_result);
+				product_type_link = '<p class="badge badge-success"><a href="/rest/product-types.html?id='+a_result.product_type+'"'
+							+'title="'+a_result.product_type_title+'" class="common_page_link">'+a_result.product_type_title+'</a></p>';
+						
+					return '<div class="col-lg-3 col-md-4 col-xs-12 mb-4"><div class="product">'
+					+'<div class="product-header text-center">'
+					+product_type_link+'<img class="img-fluid product_image" src="http://127.0.0.1:8000'+a_result.image+'"'
+					+' data-source="'+a_result.image+'" alt="'+a_result.title+'" data-src="'+a_result.image+'" alt="'
+					+a_result.title+'"></div><div class="product-body">'
+					+'<h5>'+a_result.title+'</h5></div><div class="product-footer"><p class="offer-price mb-0">'
+					+'৳ '+a_result.price+'</p>'
+					+'<table class="product_table"><tbody><tr><td><button class="the_button new_cart_button" '
+					+' data-name="'+a_result.title+'" '
+					+' data-id="'+a_result.pk+'"><i class="fa fa-shopping-cart"></i></button></td><td><a href="/product-details/'+a_result.id+'" class="view_details_button" title="'+a_result.product_name+'"><button class="btn-secondary the_button inside_details_button"  data-toggle="modal"'
+					+' data-target="#productViewModal">Details'
+					+'</button></a></td></tr></tbody></table></div></div></div>';
+			}
+			
+			$(document).ready(function(){
+			
+				var the_token = localStorage.getItem('access_token');
+				var navbar_html = "";
+				if(the_token == null || the_token == 'null'){
+					navbar_html += '<a href="/rest/login.html" class="text-white ml-3 mr-3 common_page_link">'
+					+'<i class="mdi mdi-account-circle"></i> Login</a>'
+					+'<a href="/rest/index.html" class="text-white common_page_link">'
+					+'<i class="fa fa-user-plus"></i> Sign Up</a>';
+				}else{
+					navbar_html += '<a href="/rest/dashboard.html" class="text-white ml-3 mr-3">'
+						+'<i class="fa fa-tachometer"></i> Dashboard</a>'
+						+'<a href="#" class="text-white" id="logout">'
+						+'<i class="fa fa-power-off" ></i> Logout</a>';
+				}$('#auth_navlink').append(navbar_html);
+				
+				$.ajax({
+					url:"http://127.0.0.1:8000/product-types",
+					method:"GET",
+					success:function(data){
+						var product_types_html= "";
+						for(a_product_type of data.product_types){
+						//console.log(a_product_type.title);
+							product_types_html+= '<div class="item">'
+								   +'<div class="sidebar-category-item">'
+									  +'<a href="#" title="'+a_product_type.title+'" class="category_link common_page_link">'
+									  +'<h6>'+a_product_type.title+'</h6>'
+									  +'</a></div></div>';
+						}
+						$('.category-list-sidebar-body').append(product_types_html);
+					},
+					error:function(err){
+						//status 401
+						//window.location.href = "/rest/product-types.html";
+					}
+				});
+				
+				$.ajax({
+					url:"http://127.0.0.1:8000/",
+					method:"GET",
+					success:function(data){
+						var product_html = '<div class="row">';
+						for(a_product of data.products){
+							product_html += appendResult(a_product);
+						}
+						product_html += '</div>';
+						$(".main_content_holder").html(product_html);
+					},
+					error:function(err){
+						//status 401
+						//window.location.href = "/rest/product-types.html";
+					}
+				});
+				
+				$('#logout').click(function(){
+				localStorage.setItem('access_token', null);
+				window.location.href = "/rest/home.html";
+			});	
+				
+			});
+			
+		</script>
+</body>
+</html>
+	

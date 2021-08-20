@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script>
+		token = localStorage.getItem("access_token")
+
+		if(token==null || token=="null"){
+			window.location.href = "/rest/login.html";
+		}
+	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Update Product</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="./assets/img/icon.ico" type="image/x-icon"/>
+
+	<!-- Fonts and icons -->
+	<script src="./assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['./assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="./assets/css/demo.css">
+	
+	<style>
+			
+		h1{
+			font-family:'Titillium Web', sans-serif;
+		}
+		.statistics_parent{
+			text-align:center;
+			margin-top:30px;
+			padding:16px 6px;
+			border-radius:3px;
+			border-top:solid 3px #2ea281;
+			box-shadow:0px 1px 3px #57987d;
+		}
+		.statistics_parent h1{
+			color:black;
+			font-size:3em;
+		}
+		.statistics_parent span{
+			color:black;
+			font-size:1.15em;
+		}
+		.statistics_parent span .fa{
+			color:#32a47d;
+			font-size:1.3em;
+		}
+		.statistics_parent span .fas{
+			color:#32a47d;
+			font-size:1.16em;
+		}
+			
+			
+			*{
+				font-family:'Muli', sans-serif;
+			}
+			.content_parent{
+				background:white;
+				padding:0px 12px;
+			}
+			h1, .control-label{
+				font-family:'Titillium Web', sans-serif;
+			}
+			.container-fluid{
+				padding:0px;
+			}
+			.form_holder, .list_holder{
+				margin:0px 8px;
+				padding:6px;
+				border-radius:3px;
+				box-shadow:0px 1px 3px 0px rgb(32,189,37);				
+				position:relative;
+				overflow:hidden;
+			}
+			.list_holder{
+				padding:0px;
+			}
+			.list_holder thead{
+				background:linear-gradient(to right, rgb(27,155,152), #82c11b) !important;
+			}
+			.list_holder thead th{
+				color:white;
+				font-size:1.3em;
+				font-weight:100;
+				height:auto !important;
+				padding:8px !important;
+			}
+			.list_holder td{
+				color:black;
+				font-size:1.2em;
+			}
+			#unit_id{
+				display:none;
+			}
+			.control-label{
+				color:black !important;
+				font-size:1.4em !important;
+				margin-bottom:8px;
+				display:block;
+			}
+			.button_parent{
+				margin-bottom:8px;
+			}
+			.btn{
+				color:white;
+				font-size:1em;
+			}
+			.save_button{
+				background:#149e9e;
+			}
+			
+			.product_image{
+				width:40%;
+			}			
+			
+			#update_button{
+				background:#63b641;
+			}
+			.reset_button{
+				background:#c7b109;
+			}
+			.show_on_mobile{
+				margin:0px;
+				margin-top:6px;
+				padding:0px;
+				display:none;
+			}
+			.show_on_mobile span{
+				font-weight:bold;
+			}
+			.changerIcon{
+				width:50px;
+				margin:0 !important;
+				margin-left:5px !important;
+				padding:0 !important;
+				box-shadow:0px 1px 4px 0px rgba(4, 70, 18, 0.8);
+				display:inline-block;
+				cursor:pointer;
+			}
+			.selectedIcon{
+				transform:scale(1.1);
+				border:solid 2px #0db942;
+			}
+			.referenceImage{
+				width:100%;opacity:0;
+			}
+			.sliderImage{
+				width:94%;
+				margin-left:3%;
+				box-shadow:0px 1px 6px 0px rgba(17, 64, 9, 0.8);
+				position:absolute;
+				top:0;
+				left:0;
+			}
+			.referenceImage{
+				transition:all 0.4s;
+			}
+			.point_title{
+				font-weight:bold;
+				text-align:right;
+			}
+			.point_title, .point_description{
+				font-size:1.3em;
+				margin-top:10px;
+			}
+			.modalHeading{
+				text-align:center;
+				margin:30px 0px;
+			}
+			#save_button{
+				font-size:0.96em;
+				color:white;
+				margin-top:6px;
+				background:#149e9e;
+			}
+			.form-control {
+				font-size: 1.05em !important;
+				margin-top: 4px;
+			}
+			#search_box{
+				width:100%;
+				margin-left:0px;
+			}
+			.control-label{
+				margin-top:18px;
+			}
+			@media only screen and (max-width: 991px) {
+				.col-sm-12{
+					padding:0px;
+				}
+				.list_holder, .form_holder{
+					margin:20px 0px;
+				}
+				.data_holder thead tr th:nth-child(3), 
+				.data_holder tbody tr td:nth-child(3){
+					display:none;
+				}
+				.show_on_mobile{
+					display:block;
+				}
+				.point_title{
+					text-align:left;
+				}
+				.point_title{
+					margin-top:20px;					
+				}
+				.point_description{
+					margin-top:0px;
+				}
+				.save_button_parent{
+					text-align:right;
+					
+				}
+				#search_box, #search_type{
+					width:97%;
+					margin-left:3%;
+				}
+			}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="blue">
+				
+				<a href="/rest/home.html" class="logo">
+					<i class="fas fa-home">Home</i>
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+				
+				<div class="container-fluid">
+					
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+			
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="./assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="./assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4>Hizrian</h4>
+												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#" id="logout">Logout</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">			
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="./assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Hizrian
+									<span class="user-level">Administrator</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample">
+								<ul class="nav">
+									<li>
+										<a href="#profile">
+											<span class="link-collapse">My Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#edit">
+											<span class="link-collapse">Edit Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#settings">
+											<span class="link-collapse">Settings</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav nav-primary">
+						<li class="nav-item active">
+							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<p>Dashboard</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="dashboard">
+								<ul class="nav nav-collapse">
+									
+									<li>
+										<a href="/rest/products.html">
+											<span class="sub-item">Products</span>
+										</a>
+									</li>
+									<li>
+										<a href="/rest/product-types.html">
+											<span class="sub-item">Product Types</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							
+						</li>						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div class="main-panel">
+			<div class="content">
+				
+				
+				
+		<div class="content_parent">
+		<br/>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<h1 class="menu_heading">Update Product</h1>					
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<br/>
+				</div>
+				
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="title">Title:</label>
+					<input type="text" class="form-control" id="title" autocomplete="off"/>
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="product_type">Product Type</label>
+					<select class="form-control" id="product_type">
+					
+					</select>
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="description">Description:</label>
+					<input type="textarea" class="form-control" id="description">
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="price">Price:</label>
+					<input type="number" class="form-control" id="price" autocomplete="off">
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="priority">Priority:</label>
+					<input type="number" class="form-control" id="priority">
+				</div>
+				<div class="col-lg-6 col-md-12 col-sm-12">
+					<label class="control-label" for="image">Image:</label>
+					<input type="file" class="form-control" id="image">
+					<img class="product_image" src=""/>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 text-right">
+					<br/>
+					<button class="btn common_button" id="update_button">
+						Update
+					</button>
+				<br/><br/><br/>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+		
+		<div class="modal fade" id="productModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title modal_title"></h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body modal_content">
+					</div>
+					<div class="modal-footer">
+						<a id="edit_url" href="#" target="_blank">							
+							<button type="button" class="btn btn-secondary common_modal_button" >Edit</button>
+						</a>						
+						<button type="button" class="btn btn-secondary common_modal_button" data-dismiss="modal">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>	
+			</div>
+		</div>
+		
+
+	</div>
+	<!--   Core JS Files   -->
+	<script src="./assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<script src="./assets/js/core/popper.min.js"></script>
+	<script src="./assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="./assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="./assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="./assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+	<!-- Chart JS -->
+	<script src="./assets/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="./assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="./assets/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="./assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Atlantis JS -->
+	<script src="./assets/js/atlantis.min.js"></script>
+
+	<!-- Atlantis DEMO methods, don't include it in your project! -->
+	<script src="./assets/js/setting-demo.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			var the_token = localStorage.getItem("access_token");
+			
+			var the_url = new URL(location.href);
+			var product_id = the_url.searchParams.get("id");
+			
+			$.ajax({
+				url:"http://127.0.0.1:8000/dashboard/update-product/"+product_id,
+				method:"GET",
+				beforeSend: function(xhr) {
+						xhr.setRequestHeader("Authorization","Bearer " +the_token);
+					},
+				success: function(data){
+					//console.log(data)
+					var product_types_html = "";					
+					
+						$("#title").val(data.product.title);
+						$("#description").val(data.product.description);
+						$("#price").val(data.product.price);
+						$("#priority").val(data.product.priority);
+												
+						for(a_product_type of data.product_types){
+						//console.log(a_product_type.title);
+						//console.log(a_product_type.id);
+							product_types_html+= '<option value="'+a_product_type.id+'">'+a_product_type.title+'</option>';
+						}
+						
+						$('#product_type').append(product_types_html);
+						$("#product_type").val(data.product.product_type);
+						$('.product_image').attr("src", "http://127.0.0.1:8000"+data.product.image);
+				}
+			});
+			
+			$('#logout').click(function(){
+				localStorage.setItem('access_token', null);
+				window.location.href = "/rest/home.html";
+			});	
+			
+			$(document).on('click', '#update_button', function(){
+				var title= $.trim($('#title').val());
+				var product_type= $.trim($('#product_type').val());
+				//console.log(product_type)
+				var description= $.trim($('#description').val());
+				var price= $.trim($('#price').val());
+				var priority= $.trim($('#priority').val());
+				var image= $.trim($('#image').val());
+				//console.log(image);
+				
+				if(title.length == 0){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please mention title of the product',
+					});
+					return;
+				}if(product_type.length == 0){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please select a product type',
+					});
+					return;
+				}if(description.length == 0){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please mention description of the product',
+					});
+					return;
+				}if(price.length == 0){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please mention price of the product',
+					});
+					return;
+				}if(priority.length == 0){
+					$.alert({
+						title: 'Alert!',
+						content: 'Please mention priority of the product',
+					});
+					return;
+				}
+				
+				image = $("#image")[0].files[0];
+
+				var form_data = new FormData();
+				form_data.append('title',title);
+				form_data.append('product_type',product_type);
+				form_data.append('description',description);
+				form_data.append('price',price);
+				form_data.append('priority',priority);
+				
+				//console.log(product_id);				
+				//console.log(form_data);
+	
+				if(image!=undefined){
+					console.log(image);
+					form_data.append('image',image);
+				}	
+				
+				$.ajax({
+					url: 'http://127.0.0.1:8000/dashboard/update-product/'+product_id,
+					method: 'PUT',
+					data: form_data,
+					processData: false,
+					cache: false,
+					contentType: false,
+					beforeSend: function(xhr){
+						xhr.setRequestHeader("Authorization", "Bearer "+the_token);
+					},
+				success: function(data){
+					console.log(data);
+					if(data.status == 1){
+						$.alert({
+							title:'Alert!',
+							content: 'Product exists already!',
+						});
+					}if(data.status == 2){
+						$.alert({
+							title:'Congratulations!',
+							content: 'Product is updated successfully!',
+						});
+						setTimeout(function(){
+						window.location.href = "/rest/products.html";
+					  },1500);
+					}if(data.status==3){
+						$.alert({
+							title:'Alert!',
+							content: 'update-failed, please try again!',
+						});
+					}
+				}
+			});
+		});
+	});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+	<head>
+		<script>
+			token = localStorage.getItem("access_token")
+			if(token !=null && token != 'null'){
+				window.location.href = "/rest/dashboard.html";
+			}
+		</script>
+		<title>
+			Login
+		</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+		<style>
+			*{
+				font-family:verdana;
+			}		
+			.form_parent{
+				padding:12px;
+				border-radius:4px;
+				box-shadow:0px 1px 4px 0px #0d679c;
+			}
+			
+			.control-label{
+				color:rgb(13,40,70);
+				font-size:1.5em;
+				margin-top:18px;
+			}
+			.form-control{
+				margin-top:-8px;
+			}
+			.submit_button{
+				margin-top:18px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<br/><br/><br/><br/><br/>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 col-md-1 col-sm-12">
+					
+				</div>
+				<div class="col-lg-8 col-md-10 col-sm-12">
+					<div class="form_parent">
+						<h2 class="text-center">
+							Login
+						</h2>
+						<br/>
+						<div class="row">
+							
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<form class="control-label" for="username">Username</form>
+								<input type="text" id="username" class="form-control" required/>
+							</div>
+							
+							<div class="col-lg-6 col-md-12 col-sm-12">
+								<form class="control-label" for="password">Password</form>
+								<input type="password" id="password" class="form-control" required/>
+							</div>
+							
+							<div class="col-lg-12 col-md-12 col-sm-12 text-right">
+								<br/>
+								<button class="btn btn-primary" id="submit_button">
+									Login
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+		
+			  $("#username, #email").keyup(function(){
+				$(this).val(this.value.toLowerCase().trim());
+			  });
+
+			  $("#submit_button").click(function(){
+				
+				var username = $("#username").val();
+				var password = $("#password").val();
+				
+				if(username.length == 0){
+				  $.alert({
+					title: 'Alert!',
+					content: 'Username is required!',
+				  });
+				  return;
+				}
+
+				if(password.length == 0)
+				{
+				  $.alert({
+					title: 'Alert!',
+					content: 'Password is required!',
+				  })
+				  return;
+				}
+					$.ajax({
+					url:'http://127.0.0.1:8000/account/login',
+					method:"POST",
+					data:{username:username, password:password},
+					success: function(response){
+					if(response.status == 1){
+					  $.alert({
+						title: 'Congratulations!',
+						content: "You are successfully logged in!",
+						  });
+						  localStorage.setItem("access_token", response.token.access);
+						  setTimeout(function(){
+							window.location.href = "/rest/dashboard.html";
+						  },1500);
+						}
+					else{
+					  $.alert({
+						title: 'Alert!',
+						content: 'Invalid username and password combination!',
+					  });
+					  $("#password").val("");
+					}
+				  },
+				  error: function(err, ajaxOptions, thrownError){
+					console.log(err.status);
+				  }				
+					});
+				});
+			
+			});
+	
+	</script>
+	
+	</body>
+</html>

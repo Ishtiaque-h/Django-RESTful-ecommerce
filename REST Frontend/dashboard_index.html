@@ -1,0 +1,108 @@
+{% extends "dashboard/dashboard.html" %}
+<script>
+	token = localStorage.getItem("access_token")
+	if(token == null){
+	window.location.href = "/rest/login.html";
+	}
+</script>
+
+{% block title %}
+	Dashboard
+{% endblock %}
+
+{% block style %}
+	<style>
+		h1{
+			font-family:'Titillium Web', sans-serif;
+		}
+		.statistics_parent{
+			text-align:center;
+			margin-top:30px;
+			padding:16px 6px;
+			border-radius:3px;
+			border-top:solid 3px #2ea281;
+			box-shadow:0px 1px 3px #57987d;
+		}
+		.statistics_parent h1{
+			color:black;
+			font-size:3em;
+		}
+		.statistics_parent span{
+			color:black;
+			font-size:1.15em;
+		}
+		.statistics_parent span .fa{
+			color:#32a47d;
+			font-size:1.3em;
+		}
+		.statistics_parent span .fas{
+			color:#32a47d;
+			font-size:1.16em;
+		}
+	</style>
+{% endblock %}
+
+{% block main_content %}
+	
+	<br/><br/>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h1>Summary</h1>
+			</div>
+			{% if request.user.is_superuser %}
+				<div class="col-lg-3 col-md-2 col-sm-12">
+					<div class="statistics_parent">
+						<h1>{{product_type_count}}</h1>
+						<span><i class="fas fa-list"></i> &nbsp;Total Product Types</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-2 col-sm-12">
+					<div class="statistics_parent">
+						<h1>{{categories}}</h1>
+						<span><i class="fas fa-list-alt"></i> &nbsp;Categories</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-2 col-sm-12">
+					<div class="statistics_parent">
+						<h1>{{brands}}</h1>
+						<span><i class="fas fa-handshake"></i> &nbsp;Brands</span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-2 col-sm-12">
+					<div class="statistics_parent">
+						<h1>{{products}}</h1>
+						<span><i class="fas fa-credit-card"></i> &nbsp;Products</span>
+					</div>
+				</div>
+				
+			{% endif %}
+			<div class="col-lg-3 col-md-2 col-sm-12">
+				<div class="statistics_parent">
+					<h1>{{orders}}</h1>
+					<span>
+						<i class="fa fa-cogs"></i> &nbsp;Total Orders
+						{% if not request.user.is_superuser %}
+							<br/>by me
+						{% endif %}
+					</span>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+{% endblock %}
+
+{% block script %}
+	<script>
+		
+		$(document).ready(function(){
+		
+			$('.nav-dashboard[data-menu="dashboard"]').addClass("active");
+			
+		});
+		
+	</script>
+{% endblock %}
